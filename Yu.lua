@@ -21,6 +21,21 @@
       ['✔️ เปิด'] = 2576980377,
       Type = gg.TYPE_FLOAT
     },
+    ['MEO2'] = {
+      Name = ' กิลด์เหรดไม่เดิน ',
+      Switch = false,
+      ['✔️ เปิด'] = 0,
+      Type = gg.TYPE_FLOAT,
+      Exec = function()
+        Cheat(Hack['MEO2_2'])
+      end
+    },
+    ['MEO2_2'] = {
+      Name = ' ',
+      Switch = false,
+      ['✔️ เปิด'] = 0,
+      Type = gg.TYPE_FLOAT
+    },
     ['FOV'] = {
       Name = ' Ptr_1 '
     }
@@ -124,7 +139,7 @@ end
   end
   GODO()
   sXs = 'ปกติ'
-  gg.sleep(150)
+  gg.sleep(0)
   BaseAddress = GetLibraryTextBase('libgame.so')
   if not isAddrValid(BaseAddress) then
     GODO()
@@ -134,6 +149,8 @@ end
 
   Hack['MEO1'].Address = BaseAddress + 2881632
   Hack['MEO1_2'].Address = BaseAddress + 6264796
+  Hack['MEO2'].Address = BaseAddress + 2872900
+  Hack['MEO2_2'].Address = BaseAddress + 6239096
   Hack['FOV'].Address = BaseAddress + 15101644
   GODO()
   gg.setVisible(true)
@@ -144,11 +161,13 @@ end
               o = gg.prompt({
                 '💥 Line Rangers 6.2.0 💥',
                 '1. [' .. HackSwitch(not Hack['MEO1'].Switch) .. '] ' .. Hack['MEO1'].Name,
-                '2. ปรับความเร็ว (' .. cFOV .. ')', -- แอดฟังชั่น
+                '2. [' .. HackSwitch(not Hack['MEO2'].Switch) .. '] ' .. Hack['MEO2'].Name,
+                '3. ปรับความเร็ว (' .. cFOV .. ')', 
                 '🔚 ออก'
                 
                 },{"MeONaJa"},{
                 "number",
+                "checkbox",
                 "checkbox",
                 "checkbox",
                 "checkbox",
@@ -158,8 +177,9 @@ end
               if o ~= nil then
                 if o[1] then gg.setVisible(false) gg.setVisible(false) end
                 if o[2] then gg.setVisible(false) Cheat(Hack["MEO1"]) gg.setVisible(false) end
-                if o[3] then gg.setVisible(false) ChangeFOV(Hack["FOV"]) gg.setVisible(false) end
-			    if o[4] then gg.setVisible(true) do break end gg.setVisible(true) end
+                if o[3] then gg.setVisible(false) Cheat(Hack["MEO2"]) gg.setVisible(false) end
+                if o[4] then gg.setVisible(false) ChangeFOV(Hack["FOV"]) gg.setVisible(false) end
+			    if o[5] then gg.setVisible(true) do break end gg.setVisible(true) end
 		end
 	end
 	gg.sleep(0)
