@@ -179,7 +179,7 @@ end
                 if o[2] then gg.setVisible(false) Cheat(Hack["MEO1"]) gg.setVisible(false) end
                 if o[3] then gg.setVisible(false) Cheat(Hack["MEO2"]) gg.setVisible(false) end
                 if o[4] then gg.setVisible(false) ChangeFOV(Hack["FOV"]) gg.setVisible(false) end
-			    if o[5] then gg.setVisible(true) do break end gg.setVisible(true) end
+                if o[5] then gg.setVisible(true) do break end gg.setVisible(true) end
 		end
 	end
 	gg.sleep(0)
