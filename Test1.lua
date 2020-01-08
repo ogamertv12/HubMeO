@@ -196,14 +196,14 @@ while(true) do
         if i ~= nil then
             if i[1] then gg.setVisible(false) gg.toast("หวัดดี") gg.setVisible(true) end
             if i[2] then gg.setVisible(false) Cheat(Hack["MEO1"]) gg.setVisible(false) end
-			if i[3] then gg.setVisible(false) Cheat(Hack["MEO2"]) gg.setVisible(false) end
-			if i[4] then gg.setVisible(false) Cheat(Hack["MEO3"]) gg.setVisible(false) end
-			if i[5] then gg.setVisible(false) Cheat(Hack["MEO4"]) gg.setVisible(false) end
-			if i[6] then gg.setVisible(false) Cheat(Hack["MEO5"]) gg.setVisible(false) end
-			if i[7] then gg.setVisible(false) Cheat(Hack["MEO6"]) gg.setVisible(false) end
-			if i[8] then gg.setVisible(false) Cheat(Hack["MEO7"]) gg.setVisible(false) end
-			if i[9] then gg.setVisible(false) ChangeFOV(Hack["FOV"]) gg.setVisible(false) end 
-			if i[10] then gg.setVisible(false) break gg.setVisible(false) end
+	    if i[3] then gg.setVisible(false) Cheat(Hack["MEO2"]) gg.setVisible(false) end
+	    if i[4] then gg.setVisible(false) Cheat(Hack["MEO3"]) gg.setVisible(false) end
+	    if i[5] then gg.setVisible(false) Cheat(Hack["MEO4"]) gg.setVisible(false) end
+	    if i[6] then gg.setVisible(false) Cheat(Hack["MEO5"]) gg.setVisible(false) end
+	    if i[7] then gg.setVisible(false) Cheat(Hack["MEO6"]) gg.setVisible(false) end
+	    if i[8] then gg.setVisible(false) Cheat(Hack["MEO7"]) gg.setVisible(false) end
+	    if i[9] then gg.setVisible(false) ChangeFOV(Hack["FOV"]) gg.setVisible(false) end 
+	    if i[10] then gg.setVisible(false) break gg.setVisible(false) end
 		end
 	end
 	gg.sleep(0) 
