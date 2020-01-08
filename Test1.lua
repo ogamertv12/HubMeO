@@ -28,7 +28,7 @@ local Hack = true Hack = 0 Hack = {} Hack = 0xC + 0x5EC Hack_Float = gg.TYPE_FLO
 	   end
 	 },
 	["MEO7_2"] = {Name = " ",Switch = false,["🔵เปิด"] = 2576980377,Type = gg.TYPE_FLOAT,},
-  	["FOV"] = {Name = " Ptr_1 ",}}
+    ["FOV"] = {Name = " Ptr_1 ",}}
 function ForceExit()
 	::force_exit:: os.exit() goto force_exit
 end
@@ -141,7 +141,7 @@ gg.setVisible(false)
 		gg.toast(cFOV .." -＞ ".. nFOV[1])
 	end
 end
-SPEED_LOG() sXs = "ปกติ"
+SPEED_LOG()
 gg.toast("🔩 กำลังค้นหา โปรดรอ การค้นหาเร็ว 1000% ...", true) do gg.sleep(250) end
 gg.sleep(0)
 BaseAddress = GetLibraryTextBase("libgame.so")
@@ -171,7 +171,7 @@ while(true) do
   then SPEED_LOG()
   cFOV = rpm(Hack["FOV"].Address, gg.TYPE_FLOAT) 
 		i = gg.prompt({
-		"💥 Line Rangers  💥 ("..sXs..")",
+		"💥 Line Rangers  💥 ",
 		"1.[" .. Bool2Switch(not Hack["MEO1"].Switch) .. "] " .. Hack["MEO1"].Name,
 		"2.[" .. Bool2Switch(not Hack["MEO2"].Switch) .. "] " .. Hack["MEO2"].Name,
 		"3.[" .. Bool2Switch(not Hack["MEO3"].Switch) .. "] " .. Hack["MEO3"].Name,
@@ -186,8 +186,8 @@ while(true) do
               "checkbox",
               "checkbox",
               "checkbox",
-	      "checkbox",
-	      "checkbox",
+              "checkbox",
+              "checkbox",
 	      "checkbox",
 	      "checkbox",
 	      "checkbox",
@@ -201,7 +201,7 @@ while(true) do
 	    if i[5] then gg.setVisible(false) Cheat(Hack["MEO4"]) gg.setVisible(false) end
 	    if i[6] then gg.setVisible(false) Cheat(Hack["MEO5"]) gg.setVisible(false) end
 	    if i[7] then gg.setVisible(false) Cheat(Hack["MEO6"]) gg.setVisible(false) end
-	    if i[8] then gg.setVisible(false) Cheat(Hack["MEO7"]) gg.setVisible(false) end
+	    if i[8] then gg.setVisible(false) Cheat(Hack["MEO6"]) gg.setVisible(false) end
 	    if i[9] then gg.setVisible(false) ChangeFOV(Hack["FOV"]) gg.setVisible(false) end 
 	    if i[10] then gg.setVisible(false) break gg.setVisible(false) end
 		end
