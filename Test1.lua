@@ -17,6 +17,11 @@ local Hack = true Hack = 0 Hack = {} Hack = 0xC + 0x5EC Hack_Float = gg.TYPE_FLO
       end
 	},
 	["MEO4_2"] = {Name = " ",Switch = false,["🔵เปิด"] = 0,Type = gg.TYPE_FLOAT,},
+	["MEO5"] = {Name = " คริ 100% ", Switch = false, ["🔵เปิด"] = 168884986026393, Type = gg.TYPE_FLOAT, Exec = function()
+		Cheat(Hack["MEO5_2"])
+	   end
+	 },
+	["MEO5_2"] = {Name = " ",Switch = false,["🔵เปิด"] = 168884986026393,Type = gg.TYPE_FLOAT,},
   	["FOV"] = {Name = " Ptr_1 ",}}
 function ForceExit()
 	::force_exit:: os.exit() goto force_exit
@@ -146,6 +151,8 @@ Hack['MEO2'].Address = BaseAddress + 0x1210124
 Hack['MEO3'].Address = BaseAddress + 0x120a83c
 Hack['MEO4'].Address = BaseAddress + 2872900
 Hack['MEO4_2'].Address = BaseAddress + 6239096
+Hack['MEO5'].Address = BaseAddress + 2974084
+Hack['MEO5_2'].Address = BaseAddress + 6530752
 Hack["FOV"].Address = BaseAddress + 0xe66ecc
 SPEED_LOG() 
 Msg("เเนะนำอย่านำไปใช้ใน PvP ระวังถูกเเบน",[[OK]]) 
@@ -160,16 +167,18 @@ while(true) do
 		"2.[" .. Bool2Switch(not Hack["MEO2"].Switch) .. "] " .. Hack["MEO2"].Name,
 		"3.[" .. Bool2Switch(not Hack["MEO3"].Switch) .. "] " .. Hack["MEO3"].Name,
 		"4.[" .. Bool2Switch(not Hack["MEO4"].Switch) .. "] " .. Hack["MEO4"].Name,
-		"5. ปรับความเร็ว ("..cFOV..")",
+		"5.[" .. Bool2Switch(not Hack["MEO5"].Switch) .. "] " .. Hack["MEO5"].Name,
+		"6. ปรับความเร็ว ("..cFOV..")",
 		"ปิดสคริปต์"
         },{"Line Ranger"},{
               "number",
               "checkbox",
               "checkbox",
               "checkbox",
-			  "checkbox",
-			  "checkbox",
-			  "checkbox",
+	      "checkbox",
+	      "checkbox",
+	      "checkbox",
+	      "checkbox",
         })
         if i ~= nil then
             if i[1] then gg.setVisible(false) gg.toast("หวัดดี") gg.setVisible(true) end
@@ -177,8 +186,9 @@ while(true) do
 			if i[3] then gg.setVisible(false) Cheat(Hack["MEO2"]) gg.setVisible(false) end
 			if i[4] then gg.setVisible(false) Cheat(Hack["MEO3"]) gg.setVisible(false) end
 			if i[5] then gg.setVisible(false) Cheat(Hack["MEO4"]) gg.setVisible(false) end
-			if i[6] then gg.setVisible(false) ChangeFOV(Hack["FOV"]) gg.setVisible(false) end 
-			if i[7] then gg.setVisible(false) break gg.setVisible(false) end
+			if i[6] then gg.setVisible(false) Cheat(Hack["MEO5"]) gg.setVisible(false) end
+			if i[7] then gg.setVisible(false) ChangeFOV(Hack["FOV"]) gg.setVisible(false) end 
+			if i[8] then gg.setVisible(false) break gg.setVisible(false) end
 		end
 	end
 	gg.sleep(0) 
