@@ -166,7 +166,7 @@ Hack['MEO7_2'].Address = BaseAddress + 6719040
 Hack['MEO8'].Address = BaseAddress + 0x56a11c
 Hack["FOV"].Address = BaseAddress + 0xe66ecc
 SPEED_LOG() 
-Msg(" ขอให้สนุกนะค้าบบ 🎉\nแนะนำอย่าใช้ใน PvP นะครับเสี่ยงโดนแบน\nด้วยความปรารถนาดีจาก SLLG\3K💕"[[OK]]) 
+Msg(" ขอให้สนุกนะค้าบบ 🎉\nแนะนำอย่าใช้ใน PvP นะครับเสี่ยงโดนแบน\nด้วยความปรารถนาดีจาก SLLG\3K💕",[[OK]]) 
  gg.setVisible(true)
 while(true) do
 	if gg.isVisible(true) 
