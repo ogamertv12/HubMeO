@@ -230,46 +230,46 @@ while(true) do
 	if gg.isVisible(true) 
   then SPEED_LOG()
   cFOV = rpm(Hack["FOV"].Address, gg.TYPE_FLOAT) 
-		i = gg.prompt({
-		"💥 Line Rangers  💥 ",
-		"1.[" .. Bool2Switch(not Hack["MEO1"].Switch) .. "] " .. Hack["MEO1"].Name,
-		"2.[" .. Bool2Switch(not Hack["MEO2"].Switch) .. "] " .. Hack["MEO2"].Name,
-		"3.[" .. Bool2Switch(not Hack["MEO3"].Switch) .. "] " .. Hack["MEO3"].Name,
-		"4.[" .. Bool2Switch(not Hack["MEO4"].Switch) .. "] " .. Hack["MEO4"].Name,
-		"5.[" .. Bool2Switch(not Hack["MEO5"].Switch) .. "] " .. Hack["MEO5"].Name,
-		"6.[" .. Bool2Switch(not Hack["MEO6"].Switch) .. "] " .. Hack["MEO6"].Name,
-		"7.[" .. Bool2Switch(not Hack["MEO7"].Switch) .. "] " .. Hack["MEO7"].Name,
-		"8.[" .. Bool2Switch(not Hack["MEO8"].Switch) .. "] " .. Hack["MEO8"].Name,
-		"9.[" .. Bool2Switch(not Hack["MEO9"].Switch) .. "] " .. Hack["MEO9"].Name,
-		"10. ปรับความเร็ว ("..cFOV..")",
-		"ปิดสคริปต์"
-        },{"Line Ranger"},{
-              "number",
-              "checkbox",
-              "checkbox",
-              "checkbox",
-	      "checkbox",
-              "checkbox",
-	      "checkbox",
-	      "checkbox",
-	      "checkbox",
-	      "checkbox",
-	      "checkbox",
-	      "checkbox",
-        })
-        if i ~= nil then
-            if i[1] then gg.setVisible(false) gg.toast("หวัดดี") gg.setVisible(true) end
-            if i[2] then gg.setVisible(false) Cheat(Hack["MEO1"]) gg.setVisible(false) end
-            if i[3] then gg.setVisible(false) Cheat(Hack["MEO2"]) gg.setVisible(false) end
-	    if i[4] then gg.setVisible(false) Cheat(Hack["MEO3"]) gg.setVisible(false) end
-	    if i[5] then gg.setVisible(false) Cheat(Hack["MEO4"]) gg.setVisible(false) end
-	    if i[6] then gg.setVisible(false) Cheat(Hack["MEO5"]) gg.setVisible(false) end
-	    if i[7] then gg.setVisible(false) Cheat(Hack["MEO6"]) gg.setVisible(false) end
-	    if i[8] then gg.setVisible(false) Cheat(Hack["MEO7"]) gg.setVisible(false) end
-	    if i[9] then gg.setVisible(false) Cheat(Hack["MEO8"]) gg.setVisible(false) end
-            if i[10] then gg.setVisible(false) Cheat(Hack["MEO9"]) gg.setVisible(false) end
-            if i[11] then gg.setVisible(false) ChangeFOV(Hack["FOV"]) gg.setVisible(false) end 
-            if i[12] then gg.setVisible(false) break gg.setVisible(false) end
+    i = gg.prompt({
+    "💥 Line Rangers  💥 ", 
+    "1.[" .. Bool2Switch(not Hack["MEO1"].Switch) .. "] " .. Hack["MEO1"].Name,
+    "2.[" .. Bool2Switch(not Hack["MEO2"].Switch) .. "] " .. Hack["MEO2"].Name,
+    "3.[" .. Bool2Switch(not Hack["MEO3"].Switch) .. "] " .. Hack["MEO3"].Name,
+    "4.[" .. Bool2Switch(not Hack["MEO4"].Switch) .. "] " .. Hack["MEO4"].Name,
+    "5.[" .. Bool2Switch(not Hack["MEO5"].Switch) .. "] " .. Hack["MEO5"].Name,
+    "6.[" .. Bool2Switch(not Hack["MEO6"].Switch) .. "] " .. Hack["MEO6"].Name,
+    "7.[" .. Bool2Switch(not Hack["MEO7"].Switch) .. "] " .. Hack["MEO7"].Name,
+    "8.[" .. Bool2Switch(not Hack["MEO8"].Switch) .. "] " .. Hack["MEO8"].Name,
+    "9.[" .. Bool2Switch(not Hack["MEO9"].Switch) .. "] " .. Hack["MEO9"].Name,
+    "10. ปรับความเร็ว ("..cFOV..")",
+    "ปิดสคริปต์"
+    },{"Line Ranger"},{
+         "number",
+         "checkbox",
+         "checkbox",
+         "checkbox",
+	 "checkbox",
+         "checkbox",
+	 "checkbox",
+	 "checkbox",
+         "checkbox",
+         "checkbox",
+	 "checkbox",
+	 "checkbox",
+       })
+       if i ~= nil then
+          if i[1] then gg.setVisible(false) gg.toast("หวัดดี") gg.setVisible(true) end
+          if i[2] then gg.setVisible(false) Cheat(Hack["MEO1"]) gg.setVisible(false) end
+          if i[3] then gg.setVisible(false) Cheat(Hack["MEO2"]) gg.setVisible(false) end
+	  if i[4] then gg.setVisible(false) Cheat(Hack["MEO3"]) gg.setVisible(false) end
+  	  if i[5] then gg.setVisible(false) Cheat(Hack["MEO4"]) gg.setVisible(false) end
+          if i[6] then gg.setVisible(false) Cheat(Hack["MEO5"]) gg.setVisible(false) end
+	  if i[7] then gg.setVisible(false) Cheat(Hack["MEO6"]) gg.setVisible(false) end
+          if i[8] then gg.setVisible(false) Cheat(Hack["MEO7"]) gg.setVisible(false) end
+          if i[9] then gg.setVisible(false) Cheat(Hack["MEO8"]) gg.setVisible(false) end
+          if i[10] then gg.setVisible(false) Cheat(Hack["MEO9"]) gg.setVisible(false) end
+          if i[11] then gg.setVisible(false) ChangeFOV(Hack["FOV"]) gg.setVisible(false) end 
+          if i[12] then gg.setVisible(false) break gg.setVisible(false) end
 		end
 	end
 	gg.sleep(0) 
