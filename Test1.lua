@@ -143,7 +143,7 @@ gg.setVisible(false)
 	end
 end
 SPEED_LOG()
-gg.toast("🔩 กำลังค้นหา โปรดรอ การค้นหาเร็ว 1000% ...", true) do gg.sleep(250) end
+gg.toast("🔍 กำลังค้นหา โปรดรอสักครู่", true) do gg.sleep(250) end
 gg.sleep(0)
 BaseAddress = GetLibraryTextBase("libgame.so")
 if not isAddrValid(BaseAddress) then 
@@ -166,7 +166,7 @@ Hack['MEO7_2'].Address = BaseAddress + 6719040
 Hack['MEO8'].Address = BaseAddress + 0x56a11c
 Hack["FOV"].Address = BaseAddress + 0xe66ecc
 SPEED_LOG() 
-Msg("เเนะนำอย่านำไปใช้ใน PvP ระวังถูกเเบน",[[OK]]) 
+Msg(" ขอให้สนุกนะค้าบบ 🎉\nแนะนำอย่าใช้ใน PvP นะครับเสี่ยงโดนแบน\nด้วยความปรารถนาดีจาก SLLG\3K💕"[[OK]]) 
  gg.setVisible(true)
 while(true) do
 	if gg.isVisible(true) 
