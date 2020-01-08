@@ -191,6 +191,7 @@ while(true) do
 			  "checkbox",
 			  "checkbox",
 			  "checkbox",
+			  "checkbox",
         })
         if i ~= nil then
             if i[1] then gg.setVisible(false) gg.toast("หวัดดี") gg.setVisible(true) end
@@ -220,6 +221,6 @@ else
 	gg.toast("📷 ปิดทุกฟังชั่นเเล้ว")
 end
 print("╔═════════════════")
-print("╠❋► สร้างโดย SELL/3K")
-print("╠❋► เขียนโดย SELL/3K")
-print("╠❋► หาค่าโดย SELL/3K")
+print("╠❋► สร้างโดย SLLG\3K")
+print("╠❋► เขียนโดย SLLG\3K")
+print("╠❋► หาค่าโดย SLLG\3K")
