@@ -192,7 +192,6 @@ while(true) do
 			  "checkbox",
 			  "checkbox",
 			  "checkbox",
-			  "checkbox",
         })
         if i ~= nil then
             if i[1] then gg.setVisible(false) gg.toast("หวัดดี") gg.setVisible(true) end
