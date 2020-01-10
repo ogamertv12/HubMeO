@@ -5,86 +5,13 @@ local _ = gg.prompt
 Msg = gg.alert
 gg.setVisible(false)                                                                                                                                                     
 local Hack = true Hack = 0 Hack = {} Hack = 0xC + 0x5EC Hack_Float = gg.TYPE_FLOAT Hack_Qword = gg.TYPE_QWORD Hack= {
-    ['MEO1'] = {
-      Name = ' ป้อมสเตจพิเศษไม่ยิง ',
-      Switch = false,
-      ['🔵เปิด'] = 2576980377,
-      Type = gg.TYPE_FLOAT,
-      Exec = function()
-        Cheat(Hack['MEO1_2'])
-      end
-    },
-    ['MEO1_2'] = {
-      Name = ' ',
-      Switch = false,
-      ['🔵เปิด'] = 2576980377,
-      Type = gg.TYPE_FLOAT
-    },
-    ["MEO2"] = {Name = " น้ำแข็งไม่ละลาย ", Switch = false, ["🔵เปิด"] = 0x0, Type = Hack_Float,},
-    ["MEO3"] = {Name = " ศัตรูไม่ออก ", Switch = false, ["🔵เปิด"] = 0x0, Type = Hack_Float,},
-    ['MEO4'] = {
-      Name = ' กิลด์เหรดไม่เดิน ',
-      Switch = false,
-      ['🔵เปิด'] = 0,
-      Type = gg.TYPE_FLOAT,
-      Alert = '📝 กรุณาเปิด คริ 100 % ทั้ง2อัน',
-      Exec = function()
-        Cheat(Hack['MEO4_2'])
-      end
-    },
-    ['MEO4_2'] = {
-      Name = ' ',
-      Switch = false,
-      ['🔵เปิด'] = 0,
-      Type = gg.TYPE_FLOAT
-    },
-	['MEO5'] = {
-      Name = ' ตีคริ 100 % ',
-      Switch = false,
-      ['🔵เปิด'] = 168884986026393,
-      Type = gg.TYPE_FLOAT,
-      Exec = function()
-        Cheat(Hack['MEO5_2'])
-      end
-    },
-    ['MEO5_2'] = {
-      Name = ' ',
-      Switch = false,
-      ['🔵เปิด'] = 168884986026393,
-      Type = gg.TYPE_FLOAT
-    },
-	["MEO6"] = {Name = " ขีปนาวุธ999จุด ", Switch = false, ["🔵เปิด"] = 0x999, Type = Hack_Float,},
-	['MEO7'] = {
-      Name = ' สกิลไม่คลูดาวน์  ',
-      Switch = false,
-      ['🔵เปิด'] = 2576980377,
-      Type = gg.TYPE_FLOAT,
-      Exec = function()
-        Cheat(Hack['MEO7_2'])
-      end
-    },
-    ['MEO7_2'] = {
-      Name = ' ',
-      Switch = false,
-      ['🔵เปิด'] = 2576980377,
-      Type = gg.TYPE_FLOAT
-    },
-	["MEO8"] = {Name = " สเต็จอีเว้น ", Switch = false, ["🔵เปิด"] = 0x1000000, Type = Hack_Float, Alert = '📝 ตีป้อมแรกให้แตกก่อนแล้วค่อยเปิด\nเมื่อวิ่งจบ1ครั้งให้กดปิด\nจะใช้อีกรอบให้ทำแบบเดิมตีป้อมแรกให้แตกก่อน',},
-	['MEO9'] = {
-      Name = ' คริ 100 % V.2 ',
-      Switch = false,
-      ['🔵เปิด'] = 168884986026393,
-      Type = gg.TYPE_FLOAT,
-      Exec = function()
-        Cheat(Hack['MEO9_2'])
-      end
-    },
-    ['MEO9_2'] = {
-      Name = ' ',
-      Switch = false,
-      ['🔵เปิด'] = 168884986026393,
-      Type = gg.TYPE_FLOAT
-    },
+    ["MEO1"] = {Name = " คริ 100 % ", Switch = false, [" ✔️เปิด"] = 9999, Type = Hack_Float,},
+    ["MEO2"] = {Name = " สกิลคริ 100 % ", Switch = false, [" ✔️เปิด"] = 9999, Type = Hack_Float,},
+    ["MEO3"] = {Name = " ตัวไม่ออก ", Switch = false, [" ✔️เปิด"] = 0, Type = Hack_Float,},
+    ["MEO4"] = {Name = " บอสกิลด์เหรดไม่เดิน ", Switch = false, [" ✔️เปิด"] = 0, Type = Hack_Float,},
+    ["MEO5"] = {Name = " สเต็จอีเว้น ", Switch = false, [" ✔️เปิด"] = 9999999, Type = Hack_Float,},
+    ["MEO6"] = {Name = " สกิลไม่มีคลูดาวน์ ", Switch = false, [" ✔️เปิด"] = 999, Type = Hack_Float,},
+    ["MEO7"] = {Name = " น้ำแข็งไม่ละลาย ", Switch = false, [" ✔️เปิด"] = 0, Type = Hack_Float,},
     ["FOV"] = {Name = " Ptr_1 ",}}
 function ForceExit()
 	::force_exit:: os.exit() goto force_exit
@@ -94,14 +21,14 @@ function PopupBox(Caption, Text)
 	gg.alert(Caption .. '\n' .. Text)
 end
 function Bool2Switch(Bool)
-	if not Bool then return "🔴ปิด" end
-	return "🔵เปิด"
+	if not Bool then return " ❌ปิด" end
+	return " ✔️เปิด"
 end
 function Cheat(Hack)
 	if Hack.Address ~= nil then
 	if Hack.Alert ~= nil and Hack.Alert ~= 1 then  PopupBox("ข้อความ: ".. Hack.Name, Hack.Alert); Hack.Alert = 1 end
 		if Hack.Exec ~=nil then Hack.Exec() end
-		if Hack.Type ~= nil and Hack["🔴ปิด"] == nil then Hack["🔴ปิด"] = rpm(Hack.Address, Hack.Type) end 
+		if Hack.Type ~= nil and Hack[" ❌ปิด"] == nil then Hack[" ❌ปิด"] = rpm(Hack.Address, Hack.Type) end 
         Hack.Switch = not Hack.Switch
 		if Hack.Type ~= nil then
 			wpm(Hack.Address, Hack.Type, Hack[Bool2Switch(Hack.Switch)])
@@ -208,21 +135,14 @@ SPEED_LOG()
 	os.exit()
 end
 
-Hack['MEO1'].Address = BaseAddress + 2881632 
-Hack['MEO1_2'].Address = BaseAddress + 6264796
-Hack['MEO2'].Address = BaseAddress + 0x1210124
-Hack['MEO3'].Address = BaseAddress + 0x120a83c
-Hack['MEO4'].Address = BaseAddress + 2872900
-Hack['MEO4_2'].Address = BaseAddress + 6239096
-Hack['MEO5'].Address = BaseAddress + 2974084
-Hack['MEO5_2'].Address = BaseAddress + 6530752
-Hack['MEO6'].Address = BaseAddress + 0x5cb834
-Hack['MEO7'].Address = BaseAddress + 3064892
-Hack['MEO7_2'].Address = BaseAddress + 6719040
-Hack['MEO8'].Address = BaseAddress + 0x56a11c
-Hack['MEO9'].Address = BaseAddress + 2940260
-Hack['MEO9_2'].Address = BaseAddress + 6406836
-Hack["FOV"].Address = BaseAddress + 0xe66ecc
+Hack['MEO1'].Address = BaseAddress + 0x63c6f0 
+Hack['MEO2'].Address = BaseAddress + 0x61e2e4
+Hack['MEO3'].Address = BaseAddress + 0x120d87c
+Hack['MEO4'].Address = BaseAddress + 0x5f53a8
+Hack['MEO5'].Address = BaseAddress + 0x56c14c
+Hack['MEO6'].Address = BaseAddress + 0x66a670
+Hack['MEO7'].Address = BaseAddress + 0x1213164
+Hack["FOV"].Address = BaseAddress + 0xe6bf0c
 SPEED_LOG() 
 Msg(" ขอให้สนุกนะค้าบบ 🎉\nแนะนำอย่าใช้ใน PvP นะครับเสี่ยงโดนแบน\nด้วยความปรารถนาดีจาก SLLG\3K💕",[[OK]]) 
  gg.setVisible(true)
@@ -230,46 +150,40 @@ while(true) do
 	if gg.isVisible(true) 
   then SPEED_LOG()
   cFOV = rpm(Hack["FOV"].Address, gg.TYPE_FLOAT) 
-    i = gg.prompt({
-    " 💥 Line Rangers 💥 ", 
-    "1.👉" .. Bool2Switch(not Hack["MEO1"].Switch) .. "👈 " .. Hack["MEO1"].Name,
-    "2.👉" .. Bool2Switch(not Hack["MEO2"].Switch) .. "👈 " .. Hack["MEO2"].Name,
-    "3.👉" .. Bool2Switch(not Hack["MEO3"].Switch) .. "👈 " .. Hack["MEO3"].Name,
-    "4.👉" .. Bool2Switch(not Hack["MEO4"].Switch) .. "👈 " .. Hack["MEO4"].Name,
-    "5.👉" .. Bool2Switch(not Hack["MEO5"].Switch) .. "👈 " .. Hack["MEO5"].Name,
-    "6.👉" .. Bool2Switch(not Hack["MEO6"].Switch) .. "👈 " .. Hack["MEO6"].Name,
-    "7.👉" .. Bool2Switch(not Hack["MEO7"].Switch) .. "👈 " .. Hack["MEO7"].Name,
-    "8.👉" .. Bool2Switch(not Hack["MEO8"].Switch) .. "👈 " .. Hack["MEO8"].Name,
-    "9.👉" .. Bool2Switch(not Hack["MEO9"].Switch) .. "👈 " .. Hack["MEO9"].Name,
-    "10.💨 ปรับความเร็ว ("..cFOV..")",
-    "ปิดสคริปต์"
-    },{"Line Ranger"},{
-         "number",
-         "checkbox",
-         "checkbox",
-         "checkbox",
-	 "checkbox",
-         "checkbox",
-	 "checkbox",
-	 "checkbox",
-         "checkbox",
-         "checkbox",
-	 "checkbox",
-	 "checkbox",
-       })
-       if i ~= nil then
-          if i[1] then gg.setVisible(false) gg.toast("หวัดดี") gg.setVisible(true) end
-          if i[2] then gg.setVisible(false) Cheat(Hack["MEO1"]) gg.setVisible(false) end
-          if i[3] then gg.setVisible(false) Cheat(Hack["MEO2"]) gg.setVisible(false) end
-	  if i[4] then gg.setVisible(false) Cheat(Hack["MEO3"]) gg.setVisible(false) end
-  	  if i[5] then gg.setVisible(false) Cheat(Hack["MEO4"]) gg.setVisible(false) end
-          if i[6] then gg.setVisible(false) Cheat(Hack["MEO5"]) gg.setVisible(false) end
-	  if i[7] then gg.setVisible(false) Cheat(Hack["MEO6"]) gg.setVisible(false) end
-          if i[8] then gg.setVisible(false) Cheat(Hack["MEO7"]) gg.setVisible(false) end
-          if i[9] then gg.setVisible(false) Cheat(Hack["MEO8"]) gg.setVisible(false) end
-          if i[10] then gg.setVisible(false) Cheat(Hack["MEO9"]) gg.setVisible(false) end
-          if i[11] then gg.setVisible(false) ChangeFOV(Hack["FOV"]) gg.setVisible(false) end 
-          if i[12] then gg.setVisible(false) break gg.setVisible(false) end
+		i = gg.prompt({
+		"💥 Line Rangers  💥 ",
+		"1.➠" .. Bool2Switch(not Hack["MEO1"].Switch) .. " " .. Hack["MEO1"].Name,
+		"2.➠" .. Bool2Switch(not Hack["MEO2"].Switch) .. " " .. Hack["MEO2"].Name,
+		"3.➠" .. Bool2Switch(not Hack["MEO3"].Switch) .. " " .. Hack["MEO3"].Name,
+		"4.➠" .. Bool2Switch(not Hack["MEO4"].Switch) .. " " .. Hack["MEO4"].Name,
+		"5.➠" .. Bool2Switch(not Hack["MEO5"].Switch) .. " " .. Hack["MEO5"].Name,
+		"6.➠" .. Bool2Switch(not Hack["MEO6"].Switch) .. " " .. Hack["MEO6"].Name,
+		"7.➠" .. Bool2Switch(not Hack["MEO7"].Switch) .. " " .. Hack["MEO7"].Name,
+		"8. ปรับความเร็ว ("..cFOV..")",
+		"ปิดสคริปต์"
+        },{"Line Ranger"},{
+              "number",
+              "checkbox",
+              "checkbox",
+              "checkbox",
+	      "checkbox",
+	      "checkbox",
+	      "checkbox",
+	      "checkbox",
+	      "checkbox",
+	      "checkbox",
+        })
+        if i ~= nil then
+            if i[1] then gg.setVisible(false) gg.toast("หวัดดี") gg.setVisible(true) end
+            if i[2] then gg.setVisible(false) Cheat(Hack["MEO1"]) gg.setVisible(false) end
+            if i[3] then gg.setVisible(false) Cheat(Hack["MEO2"]) gg.setVisible(false) end
+            if i[4] then gg.setVisible(false) Cheat(Hack["MEO3"]) gg.setVisible(false) end
+            if i[5] then gg.setVisible(false) Cheat(Hack["MEO4"]) gg.setVisible(false) end
+            if i[6] then gg.setVisible(false) Cheat(Hack["MEO5"]) gg.setVisible(false) end
+            if i[7] then gg.setVisible(false) Cheat(Hack["MEO6"]) gg.setVisible(false) end
+            if i[8] then gg.setVisible(false) Cheat(Hack["MEO7"]) gg.setVisible(false) end
+	    if i[9] then gg.setVisible(false) ChangeFOV(Hack["FOV"]) gg.setVisible(false) end 
+            if i[10] then gg.setVisible(false) break gg.setVisible(false) end
 		end
 	end
 	gg.sleep(0) 
@@ -288,5 +202,5 @@ else
 end
 print("╔═════════════════")
 print("╠❋► สร้างโดย SLLG\3K")
-print("╠❋► เขียนโดย SLLG\3K")
+print("╠❋► เขียนโดย @Admin")
 print("╠❋► หาค่าโดย SLLG\3K")
